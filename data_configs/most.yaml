@@ -1,0 +1,81 @@
+data:
+  batch_size: 2
+  state: [1,1,1,1,1]
+  num_modality: 5
+  interval: 1
+  root_path: datasets
+  num_workers: 0
+  pin_memory: False
+  persistent_workers: False
+
+  # dataset_map: ["philly"]
+  # train_dataset_list: ["philly"]
+  # val_dataset_list: ["philly"]
+  # test_dataset_list: ["philly"]
+
+  # dataset_map: ["Opioid_Response_Unit"]
+  # train_dataset_list: ["Opioid_Response_Unit"]
+  # val_dataset_list: ["Opioid_Response_Unit"]
+  # test_dataset_list: ["Opioid_Response_Unit"]
+
+  # dataset_map: ["Illegal_Dumping"]
+  # train_dataset_list: ["Illegal_Dumping"]
+  # val_dataset_list: ["Illegal_Dumping"]
+  # test_dataset_list: ["Illegal_Dumping"]
+
+  dataset_map: ["Police_Complaint"]
+  train_dataset_list: ["Police_Complaint"]
+  val_dataset_list: ["Police_Complaint"]
+  test_dataset_list: ["Police_Complaint"]
+
+  # dataset_map: ["Dangerous_Building_Complaint"]
+  # train_dataset_list: ["Dangerous_Building_Complaint"]
+  # val_dataset_list: ["Dangerous_Building_Complaint"]
+  # test_dataset_list: ["Dangerous_Building_Complaint"]
+
+  data_avaliage: {"poi":1, "map":1, "satellite":1, "location":1, "dreamkg": 1}
+
+model:
+  seq_len: 7
+  pred_len: 1
+  poi_dim: 768
+  dreamkg_dim: 384   # all-MiniLM-L6-v2
+  satellite_dim: 1000
+  map_dim: 1000
+  loc_dim: 2
+  mm_num_layers: 1
+  num_experts: 4
+  top_k: 1
+
+  encoder:
+    dim: 32
+    num_heads: 2
+    num_layers: 1
+
+  decoder:
+    dim: 32
+    num_heads: 2
+    num_layers: 1
+
+  MM:
+    vocab_size: 32
+    hidden_dim: 32
+    patch: 1
+    stride: 1
+
+  loss: None
+
+train:
+  lr: 0.0004
+  epochs: 20
+  eta_min: 0.0
+  patience: 50
+  log_every: 1
+  itr: 60
+  lradj: 'default'
+  pct_start: 0.4
+  alpha: 1
+  lr_decay_ratio: 0.1
+
+GPU:
+  use_gpu: True
