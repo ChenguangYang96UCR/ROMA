@@ -167,7 +167,7 @@ class Engine_Forecasting(object):
 
         preds = np.concatenate(preds, 0)
         trues = np.concatenate(trues, 0)
-        np.savez('nmost_chicago_predictions.npz', preds=preds, trues=trues)
+        np.savez('nroma_chicago_predictions.npz', preds=preds, trues=trues)
         if self.args.is_norm:
             mean_std = np.load(os.path.join(self.args.data.root_path, "data","mean_std.npy"),allow_pickle=True).item() 
             test_dataset=dataset

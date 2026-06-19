@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import configparser
 from tqdm import tqdm
-from models.MoST import Model
+from models.roma import Model
 from utils.logger import get_logger
 from data_provider.data_factory import data_provider
 from engines.engine_forecasting import Engine_Forecasting

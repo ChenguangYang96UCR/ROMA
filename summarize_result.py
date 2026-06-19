@@ -64,7 +64,7 @@ def parse_logs(log_dir: Path, pattern: str) -> pd.DataFrame:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Summarize UniTime metrics across seeds.")
-    parser.add_argument("--config_filename", default="data_configs/most.yaml")
+    parser.add_argument("--config_filename", default="data_configs/roma.yaml")
     # parser.add_argument("--exp_name", default="svd_vot_tr4_se8")
     parser.add_argument("--exp_name", default="baseline")
     # parser.add_argument("--exp_name", default="wo_svd_baseline")

@@ -27,7 +27,7 @@ if __name__ == '__main__':
     parser.add_argument('--num_workers', type=int, default=2, help='data loader num workers')
     parser.add_argument('--weight_decay', type=float, default=0.01, help='weight decay')
 
-    parser.add_argument('--config_filename', type=str, default='data_configs/most.yaml', help='Configuration yaml file')
+    parser.add_argument('--config_filename', type=str, default='data_configs/roma.yaml', help='Configuration yaml file')
     parser.add_argument('--train_ratio', type=float, default=1.0, help="training data's ratio")
 
     # ablation switches

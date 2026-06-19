@@ -2,7 +2,7 @@
 set -euo pipefail
 
 GPU=${GPU:-3}
-CONFIG=${CONFIG:-data_configs/most.yaml}
+CONFIG=${CONFIG:-data_configs/roma.yaml}
 LOG_DIR=${LOG_DIR:-logs}
 EXP_NAME=${EXP_NAME:-wo_svd_baseline}
 SEEDS=${SEEDS:-"2036 2037 2038 2039 2040"}
